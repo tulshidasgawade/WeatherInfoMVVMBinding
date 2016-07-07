@@ -1,0 +1,59 @@
+<layout>
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="info"
+            type="com.example.Model.weatherinfo"
+            />
+    </data>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:background="@drawable/background"
+        >
+
+        <EditText
+            android:id="@+id/cityname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="City name"
+            android:text="@={info.name}"/>
+        <Button
+            android:id="@+id/bycityname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Call current weather by city name"
+            android:onClick="showinfo"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear Data"
+            android:onClick="ClearData"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:text="@{info.cinfo}"/>
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
+
